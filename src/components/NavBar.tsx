@@ -2,7 +2,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Frame from "@/components/Frame";
 
 const LINKS = [
@@ -16,6 +16,23 @@ const LINKS = [
 export default function Navbar() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
+
+  // Close the mobile menu whenever the route changes
+  useEffect(() => {
+    setOpen(false);
+  }, [pathname]);
+
+  // Close the mobile menu when we cross into desktop (md and up = 768px)
+  useEffect(() => {
+    const mq = window.matchMedia("(min-width: 768px)"); // Tailwind md
+    const onChange = (e: MediaQueryListEvent) => {
+      if (e.matches) setOpen(false);
+    };
+    // if we’re already at/above md on first render
+    if (mq.matches) setOpen(false);
+    mq.addEventListener("change", onChange);
+    return () => mq.removeEventListener("change", onChange);
+  }, []);
 
   return (
     <header className="sticky top-0 z-50">
