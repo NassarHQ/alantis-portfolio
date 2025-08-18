@@ -27,7 +27,8 @@ export default function RootLayout({
     <html lang="en">
       <body className="min-h-dvh bg-[rgb(248,245,238)] text-stone-900">
         <NavBar />
-        <main className="mx-auto max-w-6xl px-4 md:px-6">{children}</main>
+        {/* Remove container for hero/home page */}
+        <main>{children}</main>
       </body>
     </html>
   );
