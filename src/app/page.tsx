@@ -1,15 +1,22 @@
-import Image from "next/image";
-import NavBar from "@/components/NavBar";
-import Hero from "../components/Hero";
-import About from "../components/About";
-import Exhibits from "../components/Exhibits";
+import Hero from "@/components/Hero";
+import About from "@/components/About";
+import Experience from "@/components/Experience";
+// import FeaturedProject from "@/components/FeaturedProject";
+import Certifications from "@/components/Certifications";
+import Contact from "@/components/Contact";
 
-export default function Home() {
+export default function Page() {
   return (
     <main>
       <Hero />
       <About />
-      <Exhibits />
+      <Experience />
+      {/* <FeaturedProject /> */}
+      <Certifications />
+      <Contact />
+      <footer className="py-10 text-center text-xs opacity-60 bg-offwhite">
+        © {new Date().getFullYear()} Alantis Ma
+      </footer>
     </main>
   );
 }

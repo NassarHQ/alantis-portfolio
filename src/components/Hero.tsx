@@ -1,268 +1,338 @@
 "use client";
-import { motion } from "framer-motion";
+import Image from "next/image";
 import Link from "next/link";
-import WallLabel from "@/components/WallLabel";
-import TicketButton from "@/components/TicketButton";
-import Frame from "@/components/Frame";
+import { motion as m } from "framer-motion";
+import { HERO } from "@/lib/content";
+import { cls } from "@/lib/theme";
+import { ArrowRight, Mail, MapPin, Sparkles, Download } from "lucide-react";
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-stone-950 via-stone-900 to-stone-800">
-      {/* Dramatic lighting effects */}
-      <div className="absolute inset-0">
-        {/* Main spotlight */}
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[600px] bg-gradient-radial from-white/30 via-white/10 to-transparent blur-3xl" />
-
-        {/* Side accent lights */}
-        <div className="absolute top-1/4 right-0 w-96 h-96 bg-gradient-radial from-amber-200/20 to-transparent blur-3xl" />
-        <div className="absolute bottom-1/4 left-0 w-72 h-72 bg-gradient-radial from-blue-200/15 to-transparent blur-2xl" />
-
-        {/* Gallery floor reflection */}
-        <div className="absolute bottom-0 inset-x-0 h-32 bg-gradient-to-t from-stone-900/80 to-transparent" />
-      </div>
-
-      <div className="relative z-10 mx-auto max-w-7xl px-6 py-20">
-        {/* Museum placard - floating and illuminated */}
-        <motion.div
-          initial={{ opacity: 0, y: -30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, ease: "easeOut" }}
-          className="mb-16 flex justify-center"
-        >
-          <div className="relative">
-            <div className="absolute inset-0 bg-white/5 backdrop-blur-xl rounded-lg blur-sm scale-105" />
-            <div className="relative bg-white/10 backdrop-blur-md border border-white/20 rounded-lg px-6 py-3">
-              <p className="text-amber-200/90 text-sm font-light tracking-[0.3em] uppercase">
-                Exhibition No. 01
-              </p>
-              <h2 className="text-white text-lg font-light">
-                Alantis Ma — Technical Specialist
-              </h2>
-            </div>
-          </div>
-        </motion.div>
-
-        <div className="grid lg:grid-cols-2 gap-20 items-center">
-          {/* Left side - Monumental artwork display */}
-          <motion.div
-            initial={{ opacity: 0, x: -80 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 1.2, ease: "easeOut" }}
-            className="relative"
-          >
-            {/* Gallery lighting from above */}
-            <div className="absolute -top-20 left-1/2 -translate-x-1/2 w-32 h-8 bg-gradient-to-b from-amber-100/30 to-transparent blur-lg" />
-
-            {/* Main artwork frame */}
-            <div className="relative group">
-              <Frame className="p-0 transform hover:scale-[1.02] transition-transform duration-700">
-                <div className="relative overflow-hidden rounded-[16px] aspect-[4/5] bg-gradient-to-br from-stone-100 via-stone-50 to-white">
-                  {/* Monumental monogram */}
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <motion.div
-                      initial={{ scale: 0.8, opacity: 0 }}
-                      animate={{ scale: 1, opacity: 1 }}
-                      transition={{
-                        duration: 1.5,
-                        ease: "easeOut",
-                        delay: 0.5,
-                      }}
-                      className="relative"
-                    >
-                      <span className="text-[12rem] lg:text-[16rem] font-light tracking-tighter text-stone-800/40 select-none">
-                        AM
-                      </span>
-                      {/* Subtle inner shadow */}
-                      <div className="absolute inset-0 text-[12rem] lg:text-[16rem] font-light tracking-tighter text-stone-600/10 transform translate-x-1 translate-y-1">
-                        AM
-                      </div>
-                    </motion.div>
-                  </div>
-
-                  {/* Gallery lighting on canvas */}
-                  <div className="absolute inset-0 bg-gradient-to-b from-white/40 via-transparent to-transparent" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-stone-200/20 via-transparent to-transparent" />
-                </div>
-              </Frame>
-
-              {/* Floor reflection */}
-              <div className="absolute top-full left-0 right-0 h-20 bg-gradient-to-b from-white/5 to-transparent transform scale-y-[-1] opacity-30" />
-            </div>
-          </motion.div>
-
-          {/* Right side - Modern museum description */}
-          <motion.div
-            initial={{ opacity: 0, x: 80 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 1.2, ease: "easeOut", delay: 0.3 }}
-            className="space-y-12"
-          >
-            {/* Large, bold headline */}
-            <div className="space-y-6">
-              <motion.h1
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.6 }}
-                className="text-5xl lg:text-7xl font-light leading-[0.9] text-white"
-              >
-                Customer-first
-                <br />
-                <span className="bg-gradient-to-r from-amber-200 via-white to-blue-200 bg-clip-text text-transparent">
-                  Technical
-                </span>
-                <br />
-                Excellence
-              </motion.h1>
-
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.8 }}
-                className="w-24 h-px bg-gradient-to-r from-amber-300 to-transparent"
-              />
-            </div>
-
-            {/* Description in museum style */}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 1 }}
-              className="space-y-6"
-            >
-              <p className="text-xl text-stone-300 font-light leading-relaxed">
-                Troubleshooting across{" "}
-                <span className="text-white font-normal">
-                  macOS, iOS, Windows, and Linux
-                </span>{" "}
-                ecosystems with precision and care.
-              </p>
-
-              <p className="text-stone-400 leading-relaxed">
-                Expertise in Active Directory, Microsoft 365, system imaging,
-                deployment automation, and comprehensive hardware diagnostics.
-                Network fundamentals include TCP/IP, DNS, DHCP, VPN, and RDP
-                configurations.
-              </p>
-            </motion.div>
-
-            {/* Experience badges */}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 1.2 }}
-              className="grid grid-cols-1 gap-4"
-            >
-              {[
-                {
-                  role: "Technical Specialist",
-                  company: "Apple",
-                  period: "Current",
-                },
-                {
-                  role: "Technical Lead Intern",
-                  company: "City of San José",
-                  period: "2023",
-                },
-                { role: "Lab Technician", company: "Tezerakt", period: "2022" },
-              ].map((exp, index) => (
-                <motion.div
-                  key={exp.company}
-                  initial={{ opacity: 0, x: 30 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.6, delay: 1.4 + index * 0.1 }}
-                  className="group flex items-center justify-between p-4 bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl hover:bg-white/10 hover:border-white/20 transition-all duration-500"
-                >
-                  <div>
-                    <h3 className="text-white font-medium">{exp.role}</h3>
-                    <p className="text-stone-400 text-sm">{exp.company}</p>
-                  </div>
-                  <span className="text-amber-300/80 text-sm font-mono">
-                    {exp.period}
-                  </span>
-                </motion.div>
-              ))}
-            </motion.div>
-
-            {/* CTA Buttons */}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 1.6 }}
-              className="flex flex-col sm:flex-row gap-4 pt-8"
-            >
-              <motion.div
-                whileHover={{ scale: 1.05, y: -2 }}
-                whileTap={{ scale: 0.98 }}
-                className="group"
-              >
-                <Link
-                  href="/exhibits"
-                  className="inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-amber-400 to-amber-300 text-stone-900 font-medium rounded-xl hover:from-amber-300 hover:to-amber-200 transition-all duration-300 shadow-lg hover:shadow-amber-300/25"
-                >
-                  View Exhibition
-                  <svg
-                    className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M17 8l4 4m0 0l-4 4m4-4H3"
-                    />
-                  </svg>
-                </Link>
-              </motion.div>
-
-              <motion.div
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-              >
-                <Link
-                  href="/contact"
-                  className="inline-flex items-center justify-center px-8 py-4 border border-white/30 text-white font-medium rounded-xl hover:bg-white/10 hover:border-white/50 transition-all duration-300 backdrop-blur-sm"
-                >
-                  Contact Curator
-                </Link>
-              </motion.div>
-            </motion.div>
-
-            {/* Gallery attribution */}
-            <motion.p
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 1, delay: 2 }}
-              className="text-stone-500 text-xs uppercase tracking-[0.3em] pt-8"
-            >
-              Digital Gallery — Systems & Infrastructure
-            </motion.p>
-          </motion.div>
-        </div>
-      </div>
-
-      {/* Ambient particles */}
-      {[...Array(12)].map((_, i) => (
-        <motion.div
-          key={i}
-          className="absolute w-1 h-1 bg-white/20 rounded-full"
-          style={{
-            left: `${15 + i * 7}%`,
-            top: `${20 + (i % 4) * 20}%`,
-          }}
+    <header
+      id="top"
+      className="relative overflow-hidden min-h-screen flex items-center"
+    >
+      {/* Enhanced Background System - 60% Dark Base */}
+      <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950">
+        {/* Animated Grid Pattern */}
+        <m.div
+          className="absolute inset-0 opacity-[0.03]"
           animate={{
-            y: [-20, 20, -20],
-            opacity: [0.2, 0.6, 0.2],
+            backgroundPosition: ["0px 0px", "28px 28px"],
           }}
           transition={{
-            duration: 4 + i * 0.3,
+            duration: 20,
             repeat: Infinity,
-            ease: "easeInOut",
-            delay: i * 0.2,
+            ease: "linear",
+          }}
+          style={{
+            backgroundImage:
+              "linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)",
+            backgroundSize: "28px 28px",
           }}
         />
-      ))}
-    </section>
+
+        {/* Dynamic Gradient Orbs - 30% Accent Colors */}
+        <m.div
+          className="absolute -top-32 -left-16 h-[32rem] w-[50rem] rounded-full blur-3xl bg-gradient-to-r from-amber-400/20 via-orange-500/15 to-yellow-400/20"
+          animate={{
+            scale: [1, 1.1, 1],
+            x: [0, 20, 0],
+            y: [0, -10, 0],
+          }}
+          transition={{
+            duration: 8,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+        />
+        <m.div
+          className="absolute top-1/3 -right-24 h-[28rem] w-[42rem] rounded-full blur-3xl bg-gradient-to-l from-blue-500/15 via-cyan-400/10 to-teal-400/15"
+          animate={{
+            scale: [1, 1.05, 1],
+            x: [0, -15, 0],
+            y: [0, 15, 0],
+          }}
+          transition={{
+            duration: 10,
+            repeat: Infinity,
+            ease: "easeInOut",
+            delay: 2,
+          }}
+        />
+        <m.div
+          className="absolute bottom-0 left-1/4 h-[24rem] w-[38rem] rounded-full blur-3xl bg-gradient-to-tr from-violet-500/10 via-purple-400/8 to-pink-400/12"
+          animate={{
+            scale: [1, 1.08, 1],
+            rotate: [0, 5, 0],
+          }}
+          transition={{
+            duration: 12,
+            repeat: Infinity,
+            ease: "easeInOut",
+            delay: 4,
+          }}
+        />
+
+        {/* Floating Particles */}
+        {[...Array(6)].map((_, i) => (
+          <m.div
+            key={i}
+            className="absolute w-1 h-1 bg-amber-400/40 rounded-full"
+            style={{
+              left: `${20 + i * 15}%`,
+              top: `${30 + i * 8}%`,
+            }}
+            animate={{
+              y: [-10, -30, -10],
+              opacity: [0.3, 0.8, 0.3],
+              scale: [1, 1.2, 1],
+            }}
+            transition={{
+              duration: 4 + i * 0.5,
+              repeat: Infinity,
+              ease: "easeInOut",
+              delay: i * 0.8,
+            }}
+          />
+        ))}
+      </div>
+
+      <div
+        className={`${cls.sectionWrap} grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-20 items-center relative z-10`}
+      >
+        {/* Enhanced Content Section */}
+        <m.div
+          initial={{ opacity: 0, y: 30, rotateX: 5 }}
+          animate={{ opacity: 1, y: 0, rotateX: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="space-y-8"
+        >
+          {/* Premium Status Badge - 10% Highlight Color */}
+          <m.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ delay: 0.2, duration: 0.5 }}
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-amber-400/20 via-amber-300/15 to-yellow-400/20 border border-amber-400/30 backdrop-blur-md shadow-lg"
+          >
+            <Sparkles className="w-4 h-4 text-amber-400" />
+            <span className="text-amber-300 font-semibold text-sm">SJSU</span>
+            <div className="w-1 h-1 bg-amber-400 rounded-full animate-pulse" />
+            <span className="text-white/90 font-medium text-sm">
+              MIS (Honors)
+            </span>
+          </m.div>
+
+          {/* Hero Title with Gradient Text */}
+          <div className="space-y-4">
+            <m.h1
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.3, duration: 0.7 }}
+              className="text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight leading-[0.95]"
+            >
+              <span className="bg-gradient-to-r from-white via-white to-amber-200 bg-clip-text text-transparent">
+                {HERO.name}
+              </span>
+            </m.h1>
+
+            <m.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.4, duration: 0.7 }}
+              className="text-xl sm:text-2xl text-white/80 font-light leading-relaxed"
+            >
+              {HERO.tagline}
+            </m.p>
+
+            <m.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.5, duration: 0.7 }}
+              className="text-base text-white/60 font-normal"
+            >
+              {HERO.sub}
+            </m.p>
+          </div>
+
+          {/* Premium CTA Section */}
+          <m.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.6, duration: 0.7 }}
+            className="flex flex-col sm:flex-row items-start sm:items-center gap-4"
+          >
+            <div className="flex flex-wrap items-center gap-3">
+              {/* Primary CTA - 10% Highlight */}
+              <Link href="#project">
+                <m.div
+                  whileHover={{ scale: 1.05, y: -2 }}
+                  whileTap={{ scale: 0.98 }}
+                  className="group inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-amber-400 via-amber-500 to-orange-500 text-black font-semibold rounded-2xl shadow-[0_8px_30px_rgba(245,158,11,0.3)] hover:shadow-[0_12px_40px_rgba(245,158,11,0.4)] transition-all duration-300"
+                >
+                  See Featured Work
+                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                </m.div>
+              </Link>
+
+              {/* Secondary CTA - 30% Accent */}
+              <Link href="#contact">
+                <m.div
+                  whileHover={{ scale: 1.05, y: -2 }}
+                  whileTap={{ scale: 0.98 }}
+                  className="group inline-flex items-center gap-2 px-6 py-3 bg-white/5 border border-white/20 backdrop-blur-md text-white font-medium rounded-2xl hover:bg-white/10 hover:border-white/30 transition-all duration-300 shadow-lg"
+                >
+                  <Mail className="w-4 h-4" />
+                  Let's Connect
+                </m.div>
+              </Link>
+            </div>
+
+            {/* Location Indicator */}
+            <m.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.8 }}
+              className="inline-flex items-center gap-2 text-sm text-white/70 font-medium"
+            >
+              <MapPin className="w-4 h-4 text-amber-400" />
+              {HERO.location}
+            </m.div>
+          </m.div>
+
+          {/* Decorative Stats/Metrics */}
+          <m.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.9, duration: 0.7 }}
+            className="flex items-center gap-8 pt-4"
+          >
+            <div className="text-center">
+              <div className="text-2xl font-bold text-white">5+</div>
+              <div className="text-xs text-white/50 uppercase tracking-wider">
+                Years Experience
+              </div>
+            </div>
+            <div className="w-px h-8 bg-white/10" />
+            <div className="text-center">
+              <div className="text-2xl font-bold text-white">50+</div>
+              <div className="text-xs text-white/50 uppercase tracking-wider">
+                Projects Delivered
+              </div>
+            </div>
+            <div className="w-px h-8 bg-white/10" />
+            <div className="text-center">
+              <div className="text-2xl font-bold text-white">∞</div>
+              <div className="text-xs text-white/50 uppercase tracking-wider">
+                Ideas Generated
+              </div>
+            </div>
+          </m.div>
+        </m.div>
+
+        {/* Revolutionary Photo Card */}
+        <m.div
+          initial={{ opacity: 0, scale: 0.9, rotateY: 15 }}
+          animate={{ opacity: 1, scale: 1, rotateY: 0 }}
+          transition={{ duration: 1, delay: 0.2, ease: "easeOut" }}
+          className="relative h-[28rem] sm:h-[32rem] lg:h-[36rem] perspective-1000"
+        >
+          {/* Floating Card Container */}
+          <m.div
+            animate={{
+              y: [0, -8, 0],
+              rotateX: [0, 1, 0],
+              rotateY: [0, -1, 0],
+            }}
+            transition={{
+              duration: 6,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
+            className="relative h-full w-full group"
+          >
+            {/* Card Shadow/Glow */}
+            <div className="absolute inset-0 bg-gradient-to-br from-amber-400/20 via-transparent to-blue-500/10 rounded-3xl blur-2xl scale-105 opacity-60" />
+
+            {/* Main Card */}
+            <m.div
+              whileHover={{
+                scale: 1.02,
+                rotateY: -5,
+                rotateX: 5,
+                z: 50,
+              }}
+              transition={{ type: "spring", stiffness: 300, damping: 30 }}
+              className="relative h-full w-full rounded-3xl overflow-hidden bg-gradient-to-br from-white/[0.08] via-white/[0.05] to-white/[0.02] backdrop-blur-2xl border border-white/[0.1] shadow-[0_25px_60px_rgba(0,0,0,0.4)] transform-gpu"
+            >
+              {/* Image Container */}
+              <div className="relative h-full w-full overflow-hidden">
+                <Image
+                  src={HERO.photo}
+                  alt="Professional portrait"
+                  fill
+                  className="object-cover transition-transform duration-700 group-hover:scale-105"
+                  priority
+                />
+
+                {/* Overlay Gradient */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent" />
+
+                {/* Floating Elements */}
+                <div className="absolute top-4 right-4 w-3 h-3 bg-green-400 rounded-full animate-pulse shadow-lg" />
+                <div className="absolute bottom-4 left-4 text-white/80 text-sm font-medium">
+                  Available for opportunities
+                </div>
+              </div>
+
+              {/* Card Shine Effect */}
+              <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/[0.05] to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
+              </div>
+            </m.div>
+          </m.div>
+
+          {/* Floating Accent Elements */}
+          <m.div
+            className="absolute -top-6 -right-6 w-12 h-12 bg-gradient-to-br from-amber-400/30 to-orange-500/20 rounded-full backdrop-blur-md border border-amber-400/20"
+            animate={{
+              rotate: 360,
+              scale: [1, 1.1, 1],
+            }}
+            transition={{
+              rotate: { duration: 20, repeat: Infinity, ease: "linear" },
+              scale: { duration: 3, repeat: Infinity, ease: "easeInOut" },
+            }}
+          />
+          <m.div
+            className="absolute -bottom-4 -left-4 w-8 h-8 bg-gradient-to-br from-blue-400/30 to-cyan-500/20 rounded-full backdrop-blur-md border border-blue-400/20"
+            animate={{
+              rotate: -360,
+              y: [0, -10, 0],
+            }}
+            transition={{
+              rotate: { duration: 15, repeat: Infinity, ease: "linear" },
+              y: { duration: 4, repeat: Infinity, ease: "easeInOut", delay: 1 },
+            }}
+          />
+        </m.div>
+      </div>
+
+      {/* Scroll Indicator */}
+      <m.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1.5 }}
+        className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
+      >
+        <m.div
+          animate={{ y: [0, 8, 0] }}
+          transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+          className="w-6 h-10 border-2 border-white/30 rounded-full flex justify-center"
+        >
+          <div className="w-1 h-3 bg-gradient-to-b from-amber-400 to-transparent rounded-full mt-2" />
+        </m.div>
+      </m.div>
+    </header>
   );
 }

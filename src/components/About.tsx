@@ -1,333 +1,333 @@
 "use client";
+import { motion as m } from "framer-motion";
+import { ArrowRight, Code, Users, Zap, CheckCircle, Sparkles, Target, Award, Star, TrendingUp } from "lucide-react";
+import Section from "./Section";
 
-import { LazyMotion, domAnimation, m } from "framer-motion";
-import {
-  Calendar,
-  Users,
-  Database,
-  Award,
-  CheckCircle,
-  Hammer,
-  FileText,
-  ArrowRight,
-  Star,
-} from "lucide-react";
-
-const featuredProject = {
-  title: "Employee Mentorship Automation System",
-  client: "City of San José",
-  period: "Jan 2025 – Jun 2025",
-  impact: "80% reduction in manual work",
-  description:
-    "Digitized and automated the City's mentorship matching program for 300+ participants per year. Replaced brittle formulas with intelligent matching algorithms.",
-  keyResults: [
-    "Automated matching workflow with configurable UI",
-    "Implemented Hungarian Algorithm for optimal matching",
-    "Removed Power Automate dependency",
-    "Delivered complete training and documentation",
-  ],
-  technologies: [
-    "Excel VBA",
-    "Microsoft Forms",
-    "Data Analysis",
-    "Process Automation",
-  ],
-};
-
-const STATS = [
-  { label: "Tickets Resolved", value: "428", period: "90 days" },
-  { label: "Response Time", value: "11m", period: "average" },
-  { label: "SLA Achievement", value: "98.6%", period: "last quarter" },
-  { label: "Customer Rating", value: "4.9/5", period: "satisfaction" },
-];
-
-const CURRENT_ROLES = [
-  {
-    title: "Lab Technician",
-    company: "Tezerakt Inc.",
-    period: "Jul 2025 – Present",
-    focus: "Linux Systems & Network Infrastructure",
-  },
-  {
-    title: "Technical Specialist",
-    company: "Apple Inc.",
-    period: "Jul 2024 – Present",
-    focus: "macOS & iOS Support Excellence",
-  },
-];
-
-const CERTIFICATIONS = [
-  {
-    name: "CompTIA Network+ (ce)",
-    code: "V3DZZ01Q0J11K5TJ",
-    status: "Current",
-  },
-  {
-    name: "CompTIA A+ (ce)",
-    code: "V7N9QQ1TNJB41TGY",
-    status: "Current",
-  },
-  {
-    name: "IT Operations Specialist (CIOS)",
-    code: "CIOS Certified",
-    status: "Current",
-  },
-];
-
-const CORE_TOOLS = [
-  "Jamf",
-  "Intune",
-  "Active Directory",
-  "Microsoft 365",
-  "CrowdStrike",
-  "PowerShell",
-  "Python",
-  "Ansible",
-];
-
-const container = {
-  hidden: { opacity: 0 },
-  show: {
-    opacity: 1,
-    transition: {
-      duration: 0.8,
-      ease: "easeOut", // use a valid easing string
-      staggerChildren: 0.1,
+export default function About() {
+  const skills = [
+    { 
+      icon: Code, 
+      label: "System Automation", 
+      color: "from-amber-400 to-orange-500",
+      description: "Excel/VBA solutions"
     },
-  },
-};
+    { 
+      icon: Users, 
+      label: "Stakeholder Relations", 
+      color: "from-blue-400 to-cyan-500",
+      description: "Clear communication"
+    },
+    { 
+      icon: Zap, 
+      label: "Process Optimization", 
+      color: "from-violet-400 to-purple-500",
+      description: "Workflow efficiency"
+    },
+    { 
+      icon: Target, 
+      label: "Solution Design", 
+      color: "from-emerald-400 to-teal-500",
+      description: "User-friendly systems"
+    }
+  ];
 
-const item = {
-  hidden: { opacity: 0, y: 20 },
-  show: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.6 },
-  },
-};
+  const achievements = [
+    { text: "Streamlined complex workflows", icon: TrendingUp },
+    { text: "Automated manual processes", icon: Zap },
+    { text: "Improved team efficiency", icon: Users },
+    { text: "Delivered user-friendly solutions", icon: Star }
+  ];
 
-export default function CleanPortfolio() {
   return (
-    <section className="relative min-h-screen bg-gradient-to-br from-stone-950 via-stone-900 to-stone-800 py-12 overflow-hidden">
-      {/* Original background styling */}
-      <div
-        className="absolute inset-0 pointer-events-none"
-        style={{
-          background:
-            "radial-gradient(900px 600px at 20% 20%, rgba(255,255,255,0.10), transparent 60%), radial-gradient(600px 480px at 80% 0%, rgba(253,230,138,0.10), transparent 65%), radial-gradient(500px 420px at 0% 80%, rgba(191,219,254,0.08), transparent 70%)",
-          filter: "blur(10px)",
-        }}
-      />
-      <div className="absolute inset-0 [background-image:radial-gradient(rgba(255,255,255,0.04)_1px,transparent_1px)] [background-size:14px_14px] opacity-30" />
-      <div className="absolute bottom-0 inset-x-0 h-24 bg-gradient-to-t from-stone-900/70 to-transparent" />
+    <section id="about" className="relative min-h-screen flex items-center py-20 overflow-hidden">
+      {/* Enhanced Background System - Same as Hero */}
+      <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950">
+        {/* Animated Grid Pattern */}
+        <m.div
+          className="absolute inset-0 opacity-[0.04]"
+          animate={{ 
+            backgroundPosition: ['0px 0px', '40px 40px'],
+          }}
+          transition={{ 
+            duration: 25, 
+            repeat: Infinity, 
+            ease: "linear" 
+          }}
+          style={{
+            backgroundImage:
+              "linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)",
+            backgroundSize: "40px 40px",
+          }}
+        />
+        
+        {/* Dynamic Gradient Orbs - Matching Hero */}
+        <m.div 
+          className="absolute top-20 right-10 h-[35rem] w-[55rem] rounded-full blur-3xl bg-gradient-to-r from-amber-400/15 via-orange-500/10 to-yellow-400/15"
+          animate={{ 
+            scale: [1, 1.1, 1],
+            x: [0, -20, 0],
+            y: [0, 15, 0]
+          }}
+          transition={{ 
+            duration: 12, 
+            repeat: Infinity, 
+            ease: "easeInOut" 
+          }}
+        />
+        <m.div 
+          className="absolute bottom-10 left-10 h-[30rem] w-[45rem] rounded-full blur-3xl bg-gradient-to-l from-blue-500/12 via-cyan-400/8 to-teal-400/12"
+          animate={{ 
+            scale: [1, 1.08, 1],
+            x: [0, 25, 0],
+            y: [0, -20, 0]
+          }}
+          transition={{ 
+            duration: 15, 
+            repeat: Infinity, 
+            ease: "easeInOut",
+            delay: 3
+          }}
+        />
+        <m.div 
+          className="absolute top-1/3 left-1/2 h-[25rem] w-[40rem] rounded-full blur-3xl bg-gradient-to-tr from-violet-500/8 via-purple-400/6 to-pink-400/10"
+          animate={{ 
+            scale: [1, 1.12, 1],
+            rotate: [0, 10, 0]
+          }}
+          transition={{ 
+            duration: 18, 
+            repeat: Infinity, 
+            ease: "easeInOut",
+            delay: 6
+          }}
+        />
+        
+        {/* Floating Particles */}
+        {[...Array(8)].map((_, i) => (
+          <m.div
+            key={i}
+            className="absolute w-1.5 h-1.5 bg-amber-400/50 rounded-full"
+            style={{
+              left: `${15 + i * 12}%`,
+              top: `${25 + i * 9}%`,
+            }}
+            animate={{
+              y: [-15, -35, -15],
+              opacity: [0.2, 0.8, 0.2],
+              scale: [1, 1.3, 1]
+            }}
+            transition={{
+              duration: 5 + i * 0.7,
+              repeat: Infinity,
+              ease: "easeInOut",
+              delay: i * 1.2
+            }}
+          />
+        ))}
+      </div>
 
-      <div className="relative z-10 max-w-6xl mx-auto px-6 py-20">
-        <LazyMotion features={domAnimation}>
-          <m.div variants={container} initial="hidden" animate="show">
-            {/* Hero Section */}
-            <m.div variants={item} className="text-center mb-20">
-              <div className="inline-flex items-center gap-2 bg-amber-400/10 border border-amber-400/20 rounded-full px-4 py-2 mb-6">
-                <Star className="w-4 h-4 text-amber-300" />
-                <span className="text-amber-200 text-sm font-medium">
-                  Featured Work
-                </span>
-              </div>
-              <h1 className="text-5xl md:text-6xl font-bold text-white mb-6 leading-tight">
-                Technical Excellence
-              </h1>
-              <p className="text-xl text-stone-400 max-w-2xl mx-auto leading-relaxed">
-                Delivering systems automation and IT infrastructure solutions
-                that drive real business impact.
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-6 sm:px-8">
+        {/* Section Header - Premium Style */}
+        <m.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="text-center mb-20"
+        >
+          <m.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2, duration: 0.6 }}
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-gradient-to-r from-amber-400/20 via-amber-300/15 to-yellow-400/20 border border-amber-400/30 backdrop-blur-md shadow-lg mb-8"
+          >
+            <Sparkles className="w-5 h-5 text-amber-400" />
+            <span className="text-amber-300 font-semibold">My Philosophy</span>
+            <div className="w-1.5 h-1.5 bg-amber-400 rounded-full animate-pulse" />
+          </m.div>
+          
+          <m.h2 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.3, duration: 0.7 }}
+            className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight leading-[0.95] mb-6"
+          >
+            <span className="bg-gradient-to-r from-white via-white to-amber-200 bg-clip-text text-transparent">
+              About Me
+            </span>
+          </m.h2>
+        </m.div>
+
+        {/* Main Content Grid */}
+        <div className="grid lg:grid-cols-2 gap-16 lg:gap-20 items-start">
+          {/* Story Section */}
+          <m.div
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            className="space-y-8"
+          >
+            {/* Main Story */}
+            <div className="space-y-6">
+              <p className="text-xl sm:text-2xl text-white/90 font-light leading-relaxed">
+                I turn <span className="bg-gradient-to-r from-amber-400 to-orange-500 bg-clip-text text-transparent font-semibold">messy workflows</span> into simple systems—with automation first, clean docs, and respectful support.
               </p>
-            </m.div>
-
-            {/* Key Stats */}
-            <m.div
-              variants={item}
-              className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16"
-            >
-              {STATS.map((stat, idx) => (
-                <div key={idx} className="text-center group">
-                  <div className="bg-white/5 border border-white/10 rounded-2xl p-6 group-hover:bg-white/10 transition-all duration-300">
-                    <div className="text-3xl font-bold text-amber-200 mb-2">
-                      {stat.value}
-                    </div>
-                    <div className="text-white font-medium mb-1">
-                      {stat.label}
-                    </div>
-                    <div className="text-stone-500 text-sm">{stat.period}</div>
-                  </div>
-                </div>
-              ))}
-            </m.div>
-
-            {/* Featured Project */}
-            <m.div variants={item} className="mb-16">
-              <div className="bg-gradient-to-r from-amber-200/10 to-amber-400/5 border border-white/10 rounded-3xl p-8 md:p-12">
-                <div className="flex flex-col lg:flex-row gap-8">
-                  <div className="lg:w-2/3">
-                    <div className="flex items-center gap-4 mb-6">
-                      <div className="flex items-center gap-2 text-stone-400">
-                        <Users className="w-5 h-5" />
-                        <span>{featuredProject.client}</span>
-                      </div>
-                      <div className="flex items-center gap-2 text-stone-400">
-                        <Calendar className="w-5 h-5" />
-                        <span>{featuredProject.period}</span>
-                      </div>
-                    </div>
-
-                    <h2 className="text-3xl font-bold text-white mb-4">
-                      {featuredProject.title}
-                    </h2>
-
-                    <p className="text-stone-300 text-lg leading-relaxed mb-6">
-                      {featuredProject.description}
-                    </p>
-
-                    <div className="grid md:grid-cols-2 gap-4 mb-6">
-                      {featuredProject.keyResults.map((result, idx) => (
-                        <div key={idx} className="flex items-start gap-3">
-                          <CheckCircle className="w-5 h-5 text-green-400 mt-1 flex-shrink-0" />
-                          <span className="text-stone-300">{result}</span>
-                        </div>
-                      ))}
-                    </div>
-
-                    <div className="flex flex-wrap gap-2">
-                      {featuredProject.technologies.map((tech, idx) => (
-                        <span
-                          key={idx}
-                          className="bg-white/10 border border-white/20 text-stone-300 px-3 py-1 rounded-full text-sm"
-                        >
-                          {tech}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-
-                  <div className="lg:w-1/3">
-                    <div className="bg-gradient-to-br from-green-500/20 to-green-400/10 border border-green-400/30 rounded-2xl p-6 text-center">
-                      <div className="text-4xl font-bold text-green-400 mb-2">
-                        {featuredProject.impact}
-                      </div>
-                      <div className="text-green-300 font-medium">
-                        Efficiency Improvement
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </m.div>
-
-            {/* Two Column Layout */}
-            <div className="grid lg:grid-cols-2 gap-12">
-              {/* Left Column - Current Roles */}
-              <m.div variants={item}>
-                <h3 className="text-2xl font-bold text-white mb-8 flex items-center gap-3">
-                  <Database className="w-6 h-6 text-amber-300" />
-                  Current Positions
-                </h3>
-
-                <div className="space-y-6">
-                  {CURRENT_ROLES.map((role, idx) => (
-                    <div
-                      key={idx}
-                      className="bg-white/5 border border-white/10 rounded-xl p-6 hover:bg-white/10 transition-colors"
-                    >
-                      <h4 className="text-xl font-semibold text-white mb-2">
-                        {role.title}
-                      </h4>
-                      <p className="text-amber-200 font-medium mb-1">
-                        {role.company}
-                      </p>
-                      <p className="text-stone-400 text-sm mb-3">
-                        {role.period}
-                      </p>
-                      <p className="text-stone-300">{role.focus}</p>
-                    </div>
-                  ))}
-                </div>
-              </m.div>
-
-              {/* Right Column - Certifications */}
-              <m.div variants={item}>
-                <h3 className="text-2xl font-bold text-white mb-8 flex items-center gap-3">
-                  <Award className="w-6 h-6 text-amber-300" />
-                  Professional Certifications
-                </h3>
-
-                <div className="space-y-4">
-                  {CERTIFICATIONS.map((cert, idx) => (
-                    <div
-                      key={idx}
-                      className="bg-gradient-to-r from-amber-200/10 to-amber-400/5 border border-amber-400/20 rounded-xl p-5"
-                    >
-                      <div className="flex justify-between items-start mb-2">
-                        <h4 className="font-semibold text-white">
-                          {cert.name}
-                        </h4>
-                        <span className="bg-green-500/20 text-green-300 px-2 py-1 rounded-full text-xs">
-                          {cert.status}
-                        </span>
-                      </div>
-                      <p className="text-stone-400 text-sm font-mono">
-                        {cert.code}
-                      </p>
-                    </div>
-                  ))}
-                </div>
-              </m.div>
+              
+              <p className="text-lg text-white/80 font-light leading-relaxed">
+                My toolkit is <span className="text-amber-400 font-semibold">Excel/VBA</span> for quick wins, solid device management, and honest stakeholder communications.
+              </p>
+              
+              <p className="text-lg text-white/70 font-light leading-relaxed">
+                Recent highlight: a <span className="bg-gradient-to-r from-blue-400 to-cyan-500 bg-clip-text text-transparent font-semibold">City of San José mentor-matching engine</span> that removed friction and gave staff a friendly way to tune rules without touching code.
+              </p>
             </div>
 
-            {/* Core Tools */}
-            <m.div variants={item} className="mt-16">
-              <h3 className="text-2xl font-bold text-white mb-8 flex items-center gap-3">
-                <Hammer className="w-6 h-6 text-amber-300" />
-                Core Technologies
+            {/* Key Achievements */}
+            <m.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7, delay: 0.6 }}
+              className="space-y-6"
+            >
+              <h3 className="text-white text-xl font-semibold flex items-center gap-3">
+                <Award className="w-6 h-6 text-amber-400" />
+                Key Impact Areas
               </h3>
-
-              <div className="bg-white/5 border border-white/10 rounded-2xl p-8">
-                <div className="flex flex-wrap gap-3">
-                  {CORE_TOOLS.map((tool, idx) => (
-                    <span
-                      key={idx}
-                      className="bg-white/10 border border-white/20 text-white px-4 py-2 rounded-lg font-medium hover:bg-white/20 transition-colors"
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                {achievements.map((achievement, index) => {
+                  const Icon = achievement.icon;
+                  return (
+                    <m.div
+                      key={achievement.text}
+                      initial={{ opacity: 0, x: -30 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.6, delay: 0.7 + index * 0.1 }}
+                      whileHover={{ scale: 1.02, x: 5 }}
+                      className="flex items-center gap-4 p-4 rounded-xl bg-white/[0.03] backdrop-blur-sm border border-white/[0.08] hover:border-white/20 transition-all duration-300"
                     >
-                      {tool}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            </m.div>
-
-            {/* Call to Action */}
-            <m.div variants={item} className="text-center mt-20">
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <a
-                  href="/exhibits"
-                  className="inline-flex items-center gap-2 bg-amber-400 hover:bg-amber-500 text-stone-900 px-8 py-4 rounded-xl font-semibold transition-colors"
-                >
-                  View All Projects
-                  <ArrowRight className="w-5 h-5" />
-                </a>
-                <a
-                  href="/resume.pdf"
-                  className="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 border border-white/20 text-white px-8 py-4 rounded-xl font-semibold transition-colors"
-                >
-                  <FileText className="w-5 h-5" />
-                  Download Resume
-                </a>
-                <a
-                  href="mailto:contact@example.com"
-                  className="inline-flex items-center gap-2 border border-white/30 hover:border-white/50 text-white px-8 py-4 rounded-xl font-semibold transition-colors"
-                >
-                  Get In Touch
-                </a>
+                      <Icon className="w-5 h-5 text-emerald-400 flex-shrink-0" />
+                      <span className="text-white/90 font-medium">{achievement.text}</span>
+                    </m.div>
+                  );
+                })}
               </div>
             </m.div>
           </m.div>
-        </LazyMotion>
+
+          {/* Skills & Featured Project */}
+          <m.div
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.5 }}
+            className="space-y-12"
+          >
+            {/* Core Skills */}
+            <div className="space-y-8">
+              <h3 className="text-white text-xl font-semibold flex items-center gap-3">
+                <Target className="w-6 h-6 text-amber-400" />
+                Core Expertise
+              </h3>
+              <div className="grid grid-cols-1 gap-6">
+                {skills.map((skill, index) => {
+                  const Icon = skill.icon;
+                  return (
+                    <m.div
+                      key={skill.label}
+                      initial={{ opacity: 0, y: 30 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.6, delay: 0.8 + index * 0.15 }}
+                      whileHover={{ 
+                        scale: 1.03,
+                        y: -5
+                      }}
+                      className="group relative p-6 rounded-2xl bg-gradient-to-br from-white/[0.08] via-white/[0.05] to-white/[0.02] backdrop-blur-md border border-white/[0.1] hover:border-amber-400/30 transition-all duration-300 cursor-pointer"
+                    >
+                      <div className="flex items-center gap-4">
+                        <div className={`p-3 rounded-xl bg-gradient-to-r ${skill.color} bg-opacity-20 backdrop-blur-sm`}>
+                          <Icon className="w-6 h-6 text-white" />
+                        </div>
+                        <div className="flex-1">
+                          <h4 className="text-white font-semibold text-lg group-hover:text-white transition-colors mb-1">
+                            {skill.label}
+                          </h4>
+                          <p className="text-white/60 text-sm font-medium">{skill.description}</p>
+                        </div>
+                      </div>
+                      
+                      {/* Hover Glow Effect */}
+                      <div className={`absolute inset-0 rounded-2xl bg-gradient-to-r ${skill.color} opacity-0 group-hover:opacity-[0.08] transition-opacity duration-300 -z-10`} />
+                    </m.div>
+                  );
+                })}
+              </div>
+            </div>
+
+            {/* Featured Project Card - Premium Style */}
+            <m.div
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 1.2 }}
+              className="relative group"
+            >
+              {/* Glow Effect */}
+              <div className="absolute inset-0 bg-gradient-to-r from-amber-400/15 via-orange-500/10 to-yellow-400/15 rounded-3xl blur-2xl group-hover:blur-3xl transition-all duration-500" />
+              
+              <m.div
+                whileHover={{ scale: 1.02, y: -3 }}
+                className="relative p-8 rounded-3xl bg-gradient-to-br from-white/[0.12] via-white/[0.08] to-white/[0.04] backdrop-blur-2xl border border-white/[0.15] hover:border-amber-400/40 transition-all duration-300 shadow-[0_25px_60px_rgba(0,0,0,0.3)]"
+              >
+                <div className="flex items-start gap-6">
+                  <div className="p-4 rounded-2xl bg-gradient-to-r from-amber-400/30 to-orange-500/30 backdrop-blur-sm">
+                    <Users className="w-8 h-8 text-amber-400" />
+                  </div>
+                  <div className="flex-1">
+                    <h4 className="text-white text-xl font-bold mb-3">Featured Project</h4>
+                    <p className="text-white/80 leading-relaxed mb-6 text-lg">
+                      City of San José mentor-matching system that streamlined connections and empowered non-technical staff with intuitive rule management.
+                    </p>
+                    <m.div 
+                      whileHover={{ x: 5 }}
+                      className="inline-flex items-center gap-3 text-amber-400 font-semibold text-lg group-hover:gap-4 transition-all duration-300 cursor-pointer"
+                    >
+                      <span>View Case Study</span>
+                      <ArrowRight className="w-5 h-5" />
+                    </m.div>
+                  </div>
+                </div>
+              </m.div>
+            </m.div>
+          </m.div>
+        </div>
+
+        {/* Bottom CTA - Premium Style */}
+        <m.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, delay: 1.4 }}
+          className="mt-24 text-center"
+        >
+          <div className="inline-flex items-center gap-4 text-white/70 text-lg">
+            <span>Interested in collaboration?</span>
+            <m.div
+              animate={{ x: [0, 6, 0] }}
+              transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut" }}
+            >
+              <ArrowRight className="w-5 h-5 text-amber-400" />
+            </m.div>
+            <span className="text-amber-400 font-semibold cursor-pointer hover:text-amber-300 transition-colors">
+              Let's connect
+            </span>
+          </div>
+        </m.div>
       </div>
     </section>
   );
