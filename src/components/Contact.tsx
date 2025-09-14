@@ -78,7 +78,6 @@ export default function Contact() {
       id="contact"
       className="relative min-h-screen flex items-center py-20 overflow-hidden"
     >
-      {/* Static background (no animated grid/particles) */}
       <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950">
         <div
           className="absolute inset-0 opacity-[0.03]"
@@ -88,7 +87,7 @@ export default function Contact() {
             backgroundSize: "32px 32px",
           }}
         />
-        {/* One gentle orb */}
+
         <m.div
           className="absolute top-20 right-16 h-[26rem] w-[40rem] rounded-full blur-3xl bg-gradient-to-r from-amber-400/12 via-orange-500/8 to-yellow-400/12 will-change-transform"
           animate={

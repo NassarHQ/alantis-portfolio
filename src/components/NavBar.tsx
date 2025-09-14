@@ -28,7 +28,6 @@ export default function Navbar() {
     window.scrollTo({ top: y, behavior: "smooth" });
   };
 
-  // rAF-throttled scroll handler to reduce state churn
   useEffect(() => {
     const onScroll = () => {
       if (tickingRef.current) return;
@@ -55,7 +54,6 @@ export default function Navbar() {
     return () => document.removeEventListener("click", onDocClick);
   }, [open]);
 
-  // Active link by section in view
   useEffect(() => {
     const sections = NAV.map((n) => document.getElementById(n.id)).filter(
       Boolean

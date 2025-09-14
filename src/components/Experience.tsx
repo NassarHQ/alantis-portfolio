@@ -56,7 +56,6 @@ export default function Experience() {
       id="experience"
       className="relative min-h-screen flex items-center py-20 overflow-hidden"
     >
-      {/* Static background */}
       <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950">
         <div
           className="absolute inset-0 opacity-[0.03]"
@@ -66,7 +65,7 @@ export default function Experience() {
             backgroundSize: "35px 35px",
           }}
         />
-        {/* One gentle orb */}
+
         <m.div
           className="absolute top-28 left-20 h-[24rem] w-[38rem] rounded-full blur-3xl bg-gradient-to-r from-amber-400/12 via-orange-500/8 to-yellow-400/12 will-change-transform"
           animate={
@@ -103,7 +102,6 @@ export default function Experience() {
         </m.div>
 
         <div className="grid lg:grid-cols-3 gap-12 lg:gap-16">
-          {/* Experience */}
           <div className="lg:col-span-2 space-y-8">
             <h3 className="text-white text-2xl font-bold flex items-center gap-3 mb-4">
               <Clock className="w-6 h-6 text-amber-400" />
@@ -154,7 +152,6 @@ export default function Experience() {
             </div>
           </div>
 
-          {/* Certifications */}
           <div className="space-y-8">
             <h3 className="text-white text-2xl font-bold flex items-center gap-3 mb-4">
               <Award className="w-6 h-6 text-amber-400" />
