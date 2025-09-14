@@ -1,6 +1,15 @@
 "use client";
 import { motion as m } from "framer-motion";
 import { cls } from "@/lib/theme";
+import React from "react";
+
+type SectionProps = {
+  id: string;
+  title: string;
+  children: React.ReactNode;
+  className?: string;
+  noCard?: boolean;
+};
 
 export default function Section({
   id,
@@ -8,13 +17,7 @@ export default function Section({
   children,
   className = "",
   noCard = false,
-}: {
-  id: string;
-  title: string;
-  children: React.ReactNode;
-  className?: string;
-  noCard?: boolean;
-}) {
+}: SectionProps) {
   return (
     <section
       id={id}
@@ -25,8 +28,8 @@ export default function Section({
         <m.h2
           initial={{ opacity: 0, y: 14 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.4 }}
-          transition={{ duration: 0.5 }}
+          viewport={{ once: true, amount: 0.5 }}
+          transition={{ duration: 0.45 }}
           className="text-2xl sm:text-3xl font-semibold tracking-tight"
         >
           {title}

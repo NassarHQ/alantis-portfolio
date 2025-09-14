@@ -6,7 +6,7 @@ export const HERO = {
   location: "San Jose, CA",
   email: "alantis159@gmail.com",
   linkedin: "https://www.linkedin.com/in/alantis/",
-  photo: "/alantis.JPG",
+  photo: "/alantis.jpeg",
 };
 
 export const EXPERIENCE = [

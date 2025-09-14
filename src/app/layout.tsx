@@ -4,7 +4,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Alantis Museum",
+  title: "Alantis Hub",
   description: "A curated collection of work and exhibits",
 };
 
