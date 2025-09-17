@@ -1,7 +1,16 @@
 "use client";
 import React, { memo, useMemo } from "react";
 import { motion as m, useReducedMotion } from "framer-motion";
-import { ArrowRight, Code, Users, Zap, Target, Award, Star, TrendingUp } from "lucide-react";
+import {
+  ArrowRight,
+  Code,
+  Users,
+  Zap,
+  Target,
+  Award,
+  Star,
+  TrendingUp,
+} from "lucide-react";
 
 type IconType = React.ComponentType<React.SVGProps<SVGSVGElement>>;
 
@@ -28,7 +37,9 @@ const SkillCard = memo(function SkillCard({
       className="group relative p-6 rounded-2xl bg-white/[0.08] backdrop-blur-sm border border-white/[0.1] hover:border-amber-400/30 transition-colors"
     >
       <div className="flex items-center gap-4">
-        <div className={`p-3 rounded-xl bg-gradient-to-r ${color} bg-opacity-20`}>
+        <div
+          className={`p-3 rounded-xl bg-gradient-to-r ${color} bg-opacity-20`}
+        >
           <Icon className="w-6 h-6 text-white" />
         </div>
         <div className="flex-1">
@@ -84,10 +95,30 @@ function AboutInner() {
 
   const skills = useMemo(
     () => [
-      { icon: Code, label: "System Automation", color: "from-amber-400 to-orange-500", description: "Excel/VBA solutions" },
-      { icon: Users, label: "Stakeholder Relations", color: "from-blue-400 to-cyan-500", description: "Clear communication" },
-      { icon: Zap, label: "Process Optimization", color: "from-violet-400 to-purple-500", description: "Workflow efficiency" },
-      { icon: Target, label: "Solution Design", color: "from-emerald-400 to-teal-500", description: "User-friendly systems" },
+      {
+        icon: Code,
+        label: "System Automation",
+        color: "from-amber-400 to-orange-500",
+        description: "Excel/VBA solutions",
+      },
+      {
+        icon: Users,
+        label: "Stakeholder Relations",
+        color: "from-blue-400 to-cyan-500",
+        description: "Clear communication",
+      },
+      {
+        icon: Zap,
+        label: "Process Optimization",
+        color: "from-violet-400 to-purple-500",
+        description: "Workflow efficiency",
+      },
+      {
+        icon: Target,
+        label: "Solution Design",
+        color: "from-emerald-400 to-teal-500",
+        description: "User-friendly systems",
+      },
     ],
     []
   );
@@ -103,7 +134,10 @@ function AboutInner() {
   );
 
   return (
-    <section id="about" className="relative min-h-screen flex items-center py-20 overflow-hidden">
+    <section
+      id="about"
+      className="relative min-h-screen flex items-center py-20 overflow-hidden"
+    >
       <StaticBackground />
       <div className="relative z-10 w-full max-w-7xl mx-auto px-6 sm:px-8">
         <m.div
@@ -118,7 +152,9 @@ function AboutInner() {
             <div className="w-1.5 h-1.5 bg-amber-400 rounded-full" />
           </div>
           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight leading-[0.95]">
-            <span className="bg-gradient-to-r from-white via-white to-amber-200 bg-clip-text text-transparent">About Me</span>
+            <span className="bg-gradient-to-r from-white via-white to-amber-200 bg-clip-text text-transparent">
+              About Me
+            </span>
           </h2>
         </m.div>
 
@@ -133,19 +169,26 @@ function AboutInner() {
             <div className="space-y-6">
               <p className="text-xl sm:text-2xl text-white/90 font-light leading-relaxed">
                 I'm an SJSU MIS (Honors) grad who turns{" "}
-                <span className="bg-gradient-to-r from-amber-400 to-orange-500 bg-clip-text text-transparent font-semibold">messy workflows</span>{" "}
-                into reliable IT systems—automation first, clear docs, respectful support.
+                <span className="bg-gradient-to-r from-amber-400 to-orange-500 bg-clip-text text-transparent font-semibold">
+                  messy workflows
+                </span>{" "}
+                into reliable IT systems—automation first, clear docs,
+                respectful support.
               </p>
               <p className="text-lg text-white/80 font-light leading-relaxed">
-                Toolkit: <span className="text-amber-400 font-semibold">Excel/VBA</span>, Microsoft 365, device deployment & troubleshooting,
-                and practical networking (DNS, DHCP, VPN)—all wrapped in clean communication.
+                Toolkit:{" "}
+                <span className="text-amber-400 font-semibold">Excel/VBA</span>,
+                Microsoft 365, device deployment & troubleshooting, and
+                practical networking (DNS, DHCP, VPN)—all wrapped in clean
+                communication.
               </p>
               <p className="text-lg text-white/70 font-light leading-relaxed">
                 Recent highlight: a{" "}
                 <span className="bg-gradient-to-r from-blue-400 to-cyan-500 bg-clip-text text-transparent font-semibold">
                   City of San José mentorship-matching system
                 </span>{" "}
-                that cut manual work by ~80% and let staff adjust rules without touching code.
+                that cut manual work by ~80% and let staff adjust rules without
+                touching code.
               </p>
             </div>
 
@@ -156,7 +199,12 @@ function AboutInner() {
               </h3>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {achievements.map((a, i) => (
-                  <AchievementPill key={a.text} icon={a.icon} text={a.text} delay={0.08 * i} />
+                  <AchievementPill
+                    key={a.text}
+                    icon={a.icon}
+                    text={a.text}
+                    delay={0.08 * i}
+                  />
                 ))}
               </div>
             </div>
@@ -196,15 +244,24 @@ function AboutInner() {
                     <Users className="w-8 h-8 text-amber-400" />
                   </div>
                   <div className="flex-1">
-                    <h4 className="text-white text-xl font-bold mb-3">Featured Project</h4>
+                    <h4 className="text-white text-xl font-bold mb-3">
+                      Featured Project
+                    </h4>
                     <p className="text-white/80 leading-relaxed mb-6 text-lg">
-                      City of San José mentor-matching system that streamlined connections and empowered non-technical staff
-                      with intuitive rule management.
+                      City of San José mentor-matching system that streamlined
+                      connections and empowered non-technical staff with
+                      intuitive rule management.
                     </p>
-                    <div className="inline-flex items-center gap-3 text-amber-400 font-semibold text-lg transition-all duration-300 cursor-pointer">
-                      <span>View Case Study</span>
-                      <ArrowRight className="w-5 h-5" />
-                    </div>
+                    <a
+                      href="https://drive.google.com/drive/folders/1Mg3RUm3mBSZ4TEpLlTNmZvOmFPmaG33-?usp=sharing"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <div className="inline-flex items-center gap-3 text-amber-400 font-semibold text-lg transition-all duration-300 cursor-pointer">
+                        <span>View Case Study</span>
+                        <ArrowRight className="w-5 h-5" />
+                      </div>
+                    </a>
                   </div>
                 </div>
               </div>

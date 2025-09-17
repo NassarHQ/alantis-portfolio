@@ -56,7 +56,11 @@ export default function Hero() {
 
         <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
           <div className="flex flex-wrap items-center gap-3">
-            <Link href="#project">
+            <Link
+              href="https://drive.google.com/drive/folders/1X9m5MKR4XPefunJijtJN6Lz2G7im8UJr?usp=sharing"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <div className="group inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-amber-400 via-amber-500 to-orange-500 text-black font-semibold rounded-2xl shadow-lg hover:shadow-xl transition-shadow">
                 See Featured Work
                 <ArrowRight className="w-4 h-4" />

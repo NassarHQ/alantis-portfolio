@@ -46,7 +46,7 @@ export default function Contact() {
       value: "15-min Chat",
       href: "#calendar",
       color: "from-emerald-400 to-teal-500",
-      description: "Discuss your project needs",
+      description: " COMING SOON",
       primary: false,
       external: false,
     },
@@ -89,7 +89,7 @@ export default function Contact() {
         />
 
         <m.div
-          className="absolute top-20 right-16 h-[26rem] w-[40rem] rounded-full blur-3xl bg-gradient-to-r from-amber-400/12 via-orange-500/8 to-yellow-400/12 will-change-transform"
+          className="absolute top-20 right-16 h-[16rem] w-[24rem] rounded-full blur-xl bg-gradient-to-r from-amber-400/6 via-orange-500/4 to-yellow-400/6 will-change-transform"
           animate={
             reduce
               ? undefined
@@ -151,14 +151,17 @@ export default function Contact() {
                     <div
                       className={`absolute inset-0 bg-gradient-to-r ${
                         method.color
-                      } opacity-${
-                        method.primary ? "15" : "10"
-                      } rounded-3xl blur-xl`}
+                      } opacity-${method.primary ? "8" : "5"} rounded-3xl`}
                     />
                     <Link
                       href={method.href}
                       target={method.external ? "_blank" : undefined}
                       rel={method.external ? "noopener noreferrer" : undefined}
+                      className={
+                        method.label === "Schedule Call"
+                          ? "pointer-events-none opacity-60"
+                          : ""
+                      }
                     >
                       <div
                         className={`relative p-7 rounded-3xl bg-gradient-to-br ${
@@ -169,7 +172,7 @@ export default function Contact() {
                           method.primary
                             ? "border-amber-400/30"
                             : "border-white/[0.1]"
-                        } transition-all duration-300 shadow-[0_20px_50px_rgba(0,0,0,0.3)] cursor-pointer group`}
+                        } transition-all duration-300 shadow-lg cursor-pointer group`}
                       >
                         <div className="flex items-center gap-6">
                           <div
@@ -208,8 +211,8 @@ export default function Contact() {
             </div>
 
             <div className="relative">
-              <div className="absolute inset-0 bg-gradient-to-r from-amber-400/15 via-orange-500/10 to-yellow-400/15 rounded-3xl blur-2xl" />
-              <div className="relative p-8 rounded-3xl bg-gradient-to-br from-white/[0.12] via-white/[0.08] to-white/[0.04] backdrop-blur-2xl border border-amber-400/30 shadow-[0_25px_60px_rgba(0,0,0,0.3)]">
+              <div className="absolute inset-0 bg-gradient-to-r from-amber-400/8 via-orange-500/5 to-yellow-400/8 rounded-3xl blur-lg" />
+              <div className="relative p-8 rounded-3xl bg-gradient-to-br from-white/[0.12] via-white/[0.08] to-white/[0.04] backdrop-blur-2xl border border-amber-400/30 shadow-lg">
                 <div className="text-center">
                   <Heart className="w-8 h-8 text-amber-400 mx-auto mb-4" />
                   <h4 className="text-white text-xl font-bold mb-3">
@@ -237,7 +240,6 @@ export default function Contact() {
             </div>
           </div>
 
-          {/* Quick Info Sidebar */}
           <div className="space-y-8">
             <h3 className="text-white text-2xl font-bold flex items-center gap-3 mb-4">
               <MessageCircle className="w-6 h-6 text-amber-400" />
