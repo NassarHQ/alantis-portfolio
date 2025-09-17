@@ -75,20 +75,21 @@ const AchievementPill = memo(function AchievementPill({
   );
 });
 
-const StaticBackground = memo(() => (
-  <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950">
-    <div
-      className="absolute inset-0 opacity-[0.04]"
-      style={{
-        backgroundImage:
-          "linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)",
-        backgroundSize: "40px 40px",
-      }}
-    />
-    {/* One static orb only */}
-    <div className="absolute top-20 right-10 h-[26rem] w-[38rem] rounded-full blur-2xl bg-gradient-to-r from-amber-400/10 via-orange-500/6 to-yellow-400/10" />
-  </div>
-));
+const StaticBackground = memo(function StaticBackground() {
+  return (
+    <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950">
+      <div
+        className="absolute inset-0 opacity-[0.04]"
+        style={{
+          backgroundImage:
+            "linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)",
+          backgroundSize: "40px 40px",
+        }}
+      />
+      <div className="absolute top-20 right-10 h-[26rem] w-[38rem] rounded-full blur-2xl bg-gradient-to-r from-amber-400/10 via-orange-500/6 to-yellow-400/10" />
+    </div>
+  );
+});
 
 function AboutInner() {
   const reduce = useReducedMotion();
@@ -168,7 +169,7 @@ function AboutInner() {
           >
             <div className="space-y-6">
               <p className="text-xl sm:text-2xl text-white/90 font-light leading-relaxed">
-                I'm an SJSU MIS (Honors) grad who turns{" "}
+                I’m an SJSU MIS (Honors) grad who turns{" "}
                 <span className="bg-gradient-to-r from-amber-400 to-orange-500 bg-clip-text text-transparent font-semibold">
                   messy workflows
                 </span>{" "}

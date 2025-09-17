@@ -70,7 +70,7 @@ export default function Hero() {
             <Link href="#contact">
               <div className="group inline-flex items-center gap-2 px-6 py-3 bg-white/10 border border-white/20 text-white font-medium rounded-2xl hover:bg-white/20 transition-colors shadow-lg">
                 <Mail className="w-4 h-4" />
-                Let's Connect
+                Let’s Connect
               </div>
             </Link>
           </div>

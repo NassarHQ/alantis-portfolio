@@ -36,7 +36,7 @@ export default function Contact() {
       value: "Professional Network",
       href: CONTACT.linkedin,
       color: "from-blue-400 to-cyan-500",
-      description: "Let's connect professionally",
+      description: "Let’s connect professionally",
       primary: false,
       external: true,
     },
@@ -113,7 +113,7 @@ export default function Contact() {
         >
           <div className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-gradient-to-r from-amber-400/20 via-amber-300/15 to-yellow-400/20 border border-amber-400/30 backdrop-blur-md shadow-lg mb-6">
             <Sparkles className="w-5 h-5 text-amber-400" />
-            <span className="text-amber-300 font-semibold">Let's Connect</span>
+            <span className="text-amber-300 font-semibold">Let’s Connect</span>
             <div className="w-1.5 h-1.5 bg-amber-400 rounded-full" />
           </div>
 
@@ -124,7 +124,7 @@ export default function Contact() {
           </h2>
 
           <p className="text-xl sm:text-2xl text-white/80 font-light max-w-3xl mx-auto leading-relaxed">
-            Want to chat about automation or support work? I'd love to hear from
+            Want to chat about automation or support work? I’d love to hear from
             you.
           </p>
         </m.div>
@@ -219,8 +219,8 @@ export default function Contact() {
                     Ready to Collaborate?
                   </h4>
                   <p className="text-white/80 leading-relaxed mb-6">
-                    I'm always excited to work on projects that streamline
-                    workflows and make technology more accessible. Let's build
+                    I’m always excited to work on projects that streamline
+                    workflows and make technology more accessible. Let’s build
                     something amazing together!
                   </p>
                   <div className="flex justify-center gap-4">
